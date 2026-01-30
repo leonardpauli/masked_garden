@@ -10,9 +10,12 @@ export default defineConfig({
 			'@game': resolve(__dirname, 'env/game'),
 			'@three': resolve(__dirname, 'env/three'),
 			'@ui': resolve(__dirname, 'env/react_web'),
+			'@ent': resolve(__dirname, 'ent'),
 		},
 	},
 	server: {
 		port: 3000,
 	},
+	root: 'ent/web/app',
+	publicDir: resolve(__dirname, 'public'),
 })
