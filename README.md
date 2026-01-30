@@ -13,15 +13,19 @@ pnpm dev
 
 Open http://localhost:3000
 
-## Demo Pages
+## Routes
 
-| Page | Purpose |
-|------|---------|
-| `/ent/web/main/` | Main game |
-| `/ent/web/sound/` | Sound team workspace |
-| `/ent/web/art/` | Art direction + 3D preview |
-| `/ent/web/particles/` | Shader effects |
-| `/ent/web/assets/` | Asset browser |
+| Route | Purpose |
+|-------|---------|
+| `/` | Landing page |
+| `#demo` | Demo index |
+| `#demo/game` | Main game |
+| `#demo/sound` | Sound team workspace |
+| `#demo/art` | Art direction (TODO) |
+| `#demo/particles` | Shader effects (TODO) |
+| `#demo/assets` | Asset browser (TODO) |
+
+Demo pages use additative registry pattern - see `ent/web/app/demos/reg.ts`
 
 ## Architecture
 
