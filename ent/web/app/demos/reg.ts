@@ -27,6 +27,15 @@ export const demo_sound: DemoDef = {
 	tags: ['audio'],
 }
 
+export const demo_sound_debug: DemoDef = {
+	id: 'sound-debug',
+	name: 'Sound Debug',
+	desc: 'Advanced sound engine - oscillators, ADSR, LFO, spatial audio, presets',
+	path: 'demo/sound-debug',
+	team: 'sound',
+	tags: ['audio', 'debug'],
+}
+
 export const demo_art: DemoDef = {
 	id: 'art',
 	name: 'Art',
@@ -56,6 +65,7 @@ export const demo_assets: DemoDef = {
 export const demo_reg = reg_create<DemoDef>({
 	game: demo_game,
 	sound: demo_sound,
+	'sound-debug': demo_sound_debug,
 	art: demo_art,
 	particles: demo_particles,
 	assets: demo_assets,

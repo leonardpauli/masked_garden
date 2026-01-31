@@ -5,6 +5,7 @@ import {LandingPage} from './pages/Landing.tsx'
 import {DemoIndex} from './pages/DemoIndex.tsx'
 import {GamePage} from './pages/Game.tsx'
 import {SoundPage} from './pages/Sound.tsx'
+import {SoundDebugPage} from './pages/SoundDebug.tsx'
 
 type Route = {
 	path: string
@@ -16,6 +17,7 @@ const routes: Route[] = [
 	{path: 'demo', component: DemoIndex},
 	{path: 'demo/game', component: GamePage},
 	{path: 'demo/sound', component: SoundPage},
+	{path: 'demo/sound-debug', component: SoundDebugPage},
 ]
 
 export const App = () => {
