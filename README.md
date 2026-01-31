@@ -30,15 +30,26 @@ Demo pages use additative registry pattern - see `ent/web/app/demos/reg.ts`
 ## Architecture
 
 ```
-DataLayer (jotai atoms) = Source of Truth
+Pure TS Data Layer = Source of Truth
          |
     +----+----+
+    |         |
     v         v
-Three.js   React UI
-(subscribes) (subscribes)
+Three.js   Jotai Atoms
+(reads     (reflects)
+ per-frame)    |
+               v
+           React UI
+           (subscribes)
 ```
 
-**Rule:** Never flow data from React -> Three.js. Both subscribe to data layer.
+**Rules:**
+- Never flow data React → Three.js
+- Three.js reads raw data directly (imperative, per-frame)
+- React reads via Jotai atoms (reactive, on-change)
+- All mutations go through actions
+
+See [data-flow.md](data-flow.md) for full architecture.
 
 ## Structure
 
@@ -55,10 +66,13 @@ ent/web/         # entrypoints
 public/assets/   # drop zone for team
 ```
 
-## Patterns
+## Patterns & Docs
 
-See `ts-refactoring-patterns.md` and `react-patterns.md`
-
-## Spec
-
-See `SPEC.rim` for full architecture spec.
+| Doc | Purpose |
+|-----|--------|
+| [data-flow.md](data-flow.md) | Clean data flow architecture |
+| [stable-randomness.md](stable-randomness.md) | Seeded world generation |
+| [graceful-degradation.md](graceful-degradation.md) | Load handling & throttling |
+| [ts-refactoring-patterns.md](ts-refactoring-patterns.md) | TypeScript patterns |
+| [react-patterns.md](react-patterns.md) | React patterns |
+| [SPEC.rim](SPEC.rim) | Full architecture spec |
